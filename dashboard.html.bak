@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Dashboard</title>
+    <style>
+      :root {
+        --primary-color: #1f1f2e;
+        --secondary-color: #292941;
+        --accent-color: #A4C3B2;
+        --background-color: #f5f5fa;
+        --text-light: #ffffff;
+        --text-dark: #000000;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        background: var(--background-color);
+        color: var(--text-dark);
+      }
+
+      /* Navigation Bar */
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        color: var(--text-light);
+        padding: 10px 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      nav img {
+        width: 50px;
+        height: auto;
+      }
+
+      nav a {
+        color: var(--text-light);
+        text-decoration: none;
+        margin: 0 10px;
+        font-size: 16px;
+        transition: color 0.3s ease;
+      }
+
+      nav a:hover {
+        color: var(--accent-color);
+      }
+
+      /* Flexbox for Container */
+      .container {
+        display: flex;
+        flex: 1;
+        padding: 20px;
+        gap: 20px;
+      }
+
+      aside {
+        width: 220px;
+        background-color: var(--secondary-color);
+        color: var(--text-light);
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      aside a {
+        color: var(--text-light);
+        text-decoration: none;
+        padding: 10px;
+        background: var(--primary-color);
+        border-radius: 5px;
+        text-align: center;
+        transition: background 0.3s ease, transform 0.3s ease;
+      }
+
+      aside a:hover {
+        background: var(--accent-color);
+        transform: scale(1.05);
+      }
+
+      /* Dashboard Widgets */
+      .main-content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 equal-width columns */
+        grid-template-rows: repeat(2, 150px);
+        /* Reduced row height */
+        gap: 10px;
+        /* Reduced spacing between grid items */
+        padding: 10px;
+        /* Reduced padding inside the main content */
+        flex: 1;
+        background: #f4f4f4;
+      }
+
+      .main-content a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .box {
+        background: var(--accent-color);
+        color: var(--text-dark);
+        border-radius: 5px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        font-weight: bold;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+      }
+
+      .box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        background: var(--box-hover-color);
+      }
+
+      /* Footer */
+      footer {
+        background: var(--secondary-color);
+        color: var(--text-light);
+        text-align: center;
+        padding: 15px;
+        box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <img src="https://wallpapers.com/images/hd/sky-sport-logo-o38cnyv8v649e60h.jpg" alt="Sports News Logo">
+      <div>
+        <a href="#home">Home</a>
+        <a href="#analytics">Analytics</a>
+        <a href="#settings">Settings</a>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="container">
+  <aside style="text-align: center;">
+    <p>Menu</p>
+    <a href="#">Dashboard</a>
+    <a href="#">Reports</a>
+    <a href="#">Tasks</a>
+    <a href="#">Messages</a>
+    <a href="#">Settings</a>
+  </aside>
+</div>
+
+      <section class="main-content">
+        <a href="#basketball" class="box">Basketball</a>
+        <a href="#volleyball" class="box">Volleyball</a>
+        <a href="#football" class="box">Football</a>
+        <a href="#baseball" class="box">Baseball</a>
+        <a href="#american-football" class="box">American Football</a>
+        <a href="#tennis" class="box">Tennis</a>
+      </section>
+    </div>
+    <footer> &copy; 2025 Sports News Dashboard 
+	</footer>
+  </body>
+</html>

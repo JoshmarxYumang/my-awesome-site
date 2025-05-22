@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Position Example with Navigation</title>
+    <style>
+        /* Basic Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: auto;
+        }
+        nav {
+            background: #444;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        /* Static Position (Default) */
+        .static-box {
+            position: static;
+            background: #29A7D9;
+            padding: 10px;
+            color: white;
+            margin-bottom: 10px;
+        }
+        /* Relative Position */
+        .relative-box {
+            position: relative;
+            top: 20px;
+            left: 20px;
+            background: #027333;
+            padding: 10px;
+            color: white;
+        }
+        /* Absolute Position */
+        .absolute-box {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            background: #F2E527;
+            padding: 10px;
+            color: black;
+        }
+        /* Fixed Position */
+        .fixed-box {
+            position: fixed;
+            top: 0;
+            right: 0;
+            background: #0A5DA6;
+            padding: 10px;
+            color: white;
+            width: 150px;
+            text-align: center;
+        }
+        /* Sticky Position */
+        .sticky-box {
+            position: sticky;
+            top: 50px;
+            background: #222059;
+            padding: 10px;
+            color: white;
+        }
+        /* To demonstrate sticky effect */
+        .content {
+            height: 150vh;
+            background: #ddd;
+            padding: 20px;
+            margin-top: 50px; /* To avoid overlap with fixed nav */
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#static">Static</a>
+        <a href="#relative">Relative</a>
+        <a href="#sticky">Sticky</a>
+        <a href="#content">Content</a>
+    </nav>
+    <div class="container">
+        <div id="static" class="static-box">Static Position (Default)</div>
+        <div id="relative" class="relative-box">Relative Position (Moves relative to itself)</div>
+        <div id="sticky" class="sticky-box">Sticky Position (Stays visible when scrolling)</div>
+        <div id="content" class="content">
+            Scroll down to see the sticky header effect.
+            <div class="absolute-box">Absolute Position (Moves relative to nearest positioned ancestor)</div>
+        </div>
+    </div>
+    <div class="fixed-box">Fixed Position (Always visible)</div>
+</body>
+</html>
